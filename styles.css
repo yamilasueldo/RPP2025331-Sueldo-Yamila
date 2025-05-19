@@ -127,13 +127,7 @@ nav {
     color: var(--azul-oscuro);
 }
 
-.carta-language, .carta-generes {
-    margin: 0 15px 8px;
-    color: var(--texto-oscuro);
-    font-size: 0.9rem;
-}
-
-button, .save-button, .delete-button {
+button, .save-button {
     margin: 10px 15px 0;
     padding: 8px 15px;
     background-color: var(--azul-medio);
@@ -150,13 +144,6 @@ button:hover, .save-button:hover {
     background-color: var(--azul-oscuro);
 }
 
-.delete-button {
-    background-color: #c0392b;
-}
-
-.delete-button:hover {
-    background-color: #a93226;
-}
 
 .pagination-buttons {
     display: flex;

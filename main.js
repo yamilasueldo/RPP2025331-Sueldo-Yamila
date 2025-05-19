@@ -23,14 +23,7 @@ async function cargarCartas(pagina) {
         const resultados = await Promise.all(promesas);
 
         resultados.forEach(datos => {
-            const id = datos.id;
-            const urlScryFall = datos.urlScryFall;
-            const nombre = datos.nombre;
-            const urlImagen = datos.urlImagen;
-            const precio = datos.precio;
-
-            const carta = new Carta(id, urlScryFall, nombre, urlImagen, precio);
-
+            const carta = Carta.createFromJsonString(JSON.stringify(datos));
             const cartaElement = carta.createHtmlElement();
             cartasContainer.appendChild(cartaElement);
         });

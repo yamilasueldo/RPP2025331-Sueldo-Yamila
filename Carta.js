@@ -39,16 +39,17 @@ export class Carta {
         imageElement.src = this.urlImagen;
         imageElement.alt = this.nombre;
         imageElement.className = 'carta-image';
-        cartaElement.appendChild(imageElement);
-        
 
+        imageLink.appendChild(imageElement); 
+        cartaElement.appendChild(imageLink)
+      
         const precioElement = document.createElement('p');
-        precioElement.textContent = `Precio: ${this.precio}`;
+        precioElement.textContent = `Precio: $ ${this.precio}`;
         precioElement.className = 'carta-language';
         cartaElement.appendChild(precioElement);
 
         const saveButton = document.createElement('button');
-        saveButton.textContent = 'guardar';
+        saveButton.textContent = 'Guardar';
         saveButton.className = 'save-button';
         saveButton.addEventListener('click', () => {
             Carta.guardarCarta(this);
