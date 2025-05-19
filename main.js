@@ -1,11 +1,11 @@
-import { carta } from './Carta.js'
+import { Carta } from './Carta.js'
 
 const cartasPorPagina = 6;
 let paginaActual = 1;
 
 async function cargarCartas(pagina) {
-    const cartaContainer = document.getElementById('cartas');
-    cartaContainer.innerHTML = '';
+    const cartasContainer = document.getElementById('cartas');
+    cartasContainer.innerHTML = '';
 
     try {
         const idInicial = (pagina - 1) * cartasPorPagina + 1;
@@ -43,14 +43,14 @@ async function cargarCartas(pagina) {
 
 function paginaSiguiente() {
     paginaActual++;
-    cargarcartas(paginaActual);
+    cargarCartas(paginaActual);
 }
 
 
 function paginaAnterior() {
     if (paginaActual > 1) {
         paginaActual--;
-        cargarcartas(paginaActual);
+        cargarCartas(paginaActual);
     }
 }
 
@@ -58,5 +58,5 @@ document.getElementById('siguiente').addEventListener('click', paginaSiguiente);
 document.getElementById('anterior').addEventListener('click', paginaAnterior);
 
 document.addEventListener('DOMContentLoaded', () => {
-    cargarcartas(paginaActual);
+    cargarCartas(paginaActual);
 });
