@@ -4,13 +4,12 @@ const cartasContainer = document.getElementById('cartas');
 let cartasGuardadas = JSON.parse(localStorage.getItem('cartasGuardadas'));
 cartasGuardadas.forEach(datos => {
     const id = datos.id;
-    const url = datos.url;
-    const name = datos.name;
-    const language = datos.language;
-    const genres = datos.genres || [];
-    const image = datos.image;
-
-    const carta = new Carta(id, url, name, language, genres, image);
+    const urlScryFall = datos.urlScryFall;
+    const nombre = datos.nombre;
+    const urlImagen = datos.urlImagen;
+    const precio = datos.precio;
+    
+    const carta = new Carta(id, urlScryFall, nombre, urlImagen, precio);
 
     const cartaElement = carta.createHtmlElement();
     cartasContainer.appendChild(cartaElement);
@@ -29,8 +28,8 @@ function orderPorId() {
 function actualizarVista() {
     cartasContainer.innerHTML = '';
     cartasGuardadas.forEach(datos => {
-        const { id, url, name, language, genres = [], image } = datos;
-        const carta = new carta(id, url, name, language, genres, image);
+        const { id, urlScryFall, nombre, urlImagen, precio } = datos;
+        const carta = new carta(id, urlScryFall , nombre, urlImagen, precio);
         const cartaElement = carta.createHtmlElement();
         cartasContainer.appendChild(cartaElement);
     });
