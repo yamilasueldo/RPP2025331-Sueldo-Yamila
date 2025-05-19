@@ -29,7 +29,7 @@ function actualizarVista() {
     cartasContainer.innerHTML = '';
     cartasGuardadas.forEach(datos => {
         const { id, urlScryFall, nombre, urlImagen, precio } = datos;
-        const carta = new carta(id, urlScryFall , nombre, urlImagen, precio);
+        const carta = new Carta(id, urlScryFall , nombre, urlImagen, precio);
         const cartaElement = carta.createHtmlElement();
         cartasContainer.appendChild(cartaElement);
     });
