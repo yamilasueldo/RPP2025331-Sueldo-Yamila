@@ -31,11 +31,16 @@ export class Carta {
         nameElement.className = 'carta-name';
         cartaElement.appendChild(nameElement);
 
+        const imageLink = document.createElement('a');
+        imageLink.href = this.urlScryFall;
+        imageLink.target = '_blank'; 
+
         const imageElement = document.createElement('img');
         imageElement.src = this.urlImagen;
         imageElement.alt = this.nombre;
         imageElement.className = 'carta-image';
         cartaElement.appendChild(imageElement);
+        imageLink.appendChild(imageElement);
 
         const precioElement = document.createElement('p');
         precioElement.textContent = `Precio: ${this.precio}`;
