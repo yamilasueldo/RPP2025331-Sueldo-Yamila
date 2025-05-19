@@ -8,7 +8,7 @@ cartasGuardadas.forEach(datos => {
     const nombre = datos.nombre;
     const urlImagen = datos.urlImagen;
     const precio = datos.precio;
-    
+
     const carta = new Carta(id, urlScryFall, nombre, urlImagen, precio);
 
     const cartaElement = carta.createHtmlElement();
@@ -16,7 +16,7 @@ cartasGuardadas.forEach(datos => {
 });
 
 function ordenarPorNombre() {
-    cartasGuardadas.sort((a, b) => a.name.localeCompare(b.name));
+    cartasGuardadas.sort((a, b) => a.nombre.localeCompare(b.nombre));
     actualizarVista();
 }
 

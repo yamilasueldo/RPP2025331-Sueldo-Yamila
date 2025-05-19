@@ -40,7 +40,7 @@ export class Carta {
         imageElement.alt = this.nombre;
         imageElement.className = 'carta-image';
         cartaElement.appendChild(imageElement);
-        imageLink.appendChild(imageElement);
+        
 
         const precioElement = document.createElement('p');
         precioElement.textContent = `Precio: ${this.precio}`;

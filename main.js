@@ -14,7 +14,7 @@ async function cargarCartas(pagina) {
         for (let i = 0; i < cartasPorPagina; i++) {
             const id = idInicial + i;
             promesas.push(
-                fetch(`https://examenesutn.vercel.app/api/cartas/${id}`)
+                fetch(`https://api.allorigins.win/raw?url=https://examenesutn.vercel.app/api/cartas/${id}`)
                 .then(res => {
                     return res.json();
                 }));
